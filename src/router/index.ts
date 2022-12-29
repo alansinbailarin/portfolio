@@ -1,13 +1,13 @@
 import { createRouter, createWebHistory } from "vue-router";
-import HomePage from "../views/Home.vue";
-import ProjectsPage from "../views/Projects.vue";
-import BlogPage from "../views/Blog.vue";
-import NotFound from "../views/NotFound.vue";
+import HomePage from "../views/principal/Home.vue";
+import ProjectsPage from "../views/principal/Projects.vue";
+import BlogPage from "../views/principal/Blog.vue";
+import NotFound from "../views/principal/NotFound.vue";
+import ProfilePage from "../views/Profile.vue";
+import SettingsPage from "../views/Settings.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  linkActiveClass:
-    "bg-indigo-100 text-indigo-600 font-semibold hover:bg-indigo-200 hover:text-indigo-600 transition duration-300 ease-out",
   routes: [
     // Regular routes
     {
@@ -30,6 +30,16 @@ const router = createRouter({
       path: "/:pathMatch(.*)*",
       name: "notFound",
       component: NotFound,
+    },
+    {
+      path: "/profile",
+      name: "profile",
+      component: ProfilePage,
+    },
+    {
+      path: "/settings",
+      name: "settings",
+      component: SettingsPage,
     },
   ],
 });

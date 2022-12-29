@@ -13,11 +13,11 @@
             </div>
             <div class="hidden md:block">
               <div class="ml-10 flex items-baseline space-x-4 tracking-wide">
-                <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                 <RouterLink
                   v-for="item in menu"
-                  :to="item.to"
+                  :to="item.link"
                   class="text-gray-400 hover:bg-gray-100 hover:text-gray-700 px-3 py-2 rounded-md text-sm"
+                  active-class="bg-indigo-100 text-indigo-600 font-semibold hover:bg-indigo-200 hover:text-indigo-600 transition duration-300 ease-out"
                   >{{ item.name }}</RouterLink
                 >
               </div>
@@ -25,7 +25,6 @@
           </div>
           <div class="hidden md:block">
             <div class="ml-4 flex items-center md:ml-6">
-              <!-- Profile dropdown -->
               <div class="relative ml-3">
                 <div class="wrapper">
                   <button
@@ -52,14 +51,15 @@
                   aria-labelledby="user-menu-button"
                   tabindex="-1"
                 >
-                  <a
+                  <RouterLink
+                    v-for="item in userMenu"
+                    :to="item.link"
                     href="#"
                     class="block px-4 py-2 text-sm text-gray-700"
                     role="menuitem"
                     tabindex="-1"
                     id="user-menu-item-0"
-                    v-for="item in userMenu"
-                    >{{ item.name }}</a
+                    >{{ item.name }}</RouterLink
                   >
                 </div>
               </div>
@@ -69,9 +69,10 @@
             <!-- Mobile menu button -->
             <button
               type="button"
-              class="inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+              class="inline-flex items-center justify-center rounded-md p-2 text-gray-500"
               aria-controls="mobile-menu"
-              aria-expanded="false"
+              :aria-expanded="open"
+              @click="open = !open"
             >
               <span class="sr-only">Open main menu</span>
               <!--
@@ -120,97 +121,46 @@
       </div>
 
       <!-- Mobile menu, show/hide based on menu state. -->
-      <div class="md:hidden" id="mobile-menu">
+      <div v-if="open" class="md:hidden" id="mobile-menu">
         <div class="space-y-1 px-2 pt-2 pb-3 sm:px-3">
           <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-          <a
+          <RouterLink
+            v-for="item in menu"
+            :to="item.link"
             href="#"
-            class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium"
+            class="text-gray-400 block hover:bg-gray-100 hover:text-gray-700 px-3 py-2 rounded-md text-base"
             aria-current="page"
-            >Dashboard</a
-          >
-
-          <a
-            href="#"
-            class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-            >Team</a
-          >
-
-          <a
-            href="#"
-            class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-            >Projects</a
-          >
-
-          <a
-            href="#"
-            class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-            >Calendar</a
-          >
-
-          <a
-            href="#"
-            class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-            >Reports</a
+            active-class="bg-indigo-100 text-indigo-600 font-semibold hover:bg-indigo-200 hover:text-indigo-600 transition duration-300 ease-out"
+            >{{ item.name }}</RouterLink
           >
         </div>
-        <div class="border-t border-gray-700 pt-4 pb-3">
-          <div class="flex items-center px-5">
+        <div class="border-t border-gray-100 pt-4 pb-3">
+          <div class="flex items-center px-5" v-bind="user">
             <div class="flex-shrink-0">
               <img
                 class="h-10 w-10 rounded-full"
-                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                alt=""
+                :src="user.image"
+                :alt="user.name"
               />
             </div>
             <div class="ml-3">
-              <div class="text-base font-medium leading-none text-white">
-                Tom Cook
+              <div
+                class="text-base leading-none text-gray-600 font-semibold mb-1"
+              >
+                {{ user.name }}
               </div>
               <div class="text-sm font-medium leading-none text-gray-400">
-                tom@example.com
+                {{ user.email }}
               </div>
             </div>
-            <button
-              type="button"
-              class="ml-auto flex-shrink-0 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-            >
-              <span class="sr-only">View notifications</span>
-              <!-- Heroicon name: outline/bell -->
-              <svg
-                class="h-6 w-6"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"
-                />
-              </svg>
-            </button>
           </div>
-          <div class="mt-3 space-y-1 px-2">
-            <a
+          <div v-for="item in userMenu" class="mt-3 space-y-1 px-2">
+            <RouterLink
+              :to="item.link"
               href="#"
-              class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"
-              >Your Profile</a
-            >
-
-            <a
-              href="#"
-              class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"
-              >Settings</a
-            >
-
-            <a
-              href="#"
-              class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"
-              >Sign out</a
+              class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-100 hover:text-gray-600"
+              active-class="bg-gray-50 text-gray-600 font-semibold hover:bg-gray-50 hover:text-gray-600 transition duration-300 ease-out"
+              >{{ item.name }}</RouterLink
             >
           </div>
         </div>
@@ -230,16 +180,16 @@ import { RouterLink } from "vue-router";
 const open = ref(false);
 const menu = [
   {
-    name: "home",
-    to: "/",
+    name: "Inicio",
+    link: "/",
   },
   {
-    name: "projects",
-    to: "/projects",
+    name: "Proyectos",
+    link: "/projects",
   },
   {
-    name: "blog",
-    to: "/blog",
+    name: "Blog",
+    link: "/blog",
   },
 ];
 const userMenu = [
@@ -249,11 +199,18 @@ const userMenu = [
   },
   {
     name: "Configuración",
-    link: "/setting",
+    link: "/settings",
   },
   {
     name: "Cerrar sesión",
-    link: "/signOut",
+    link: "/",
   },
 ];
+
+const user = {
+  name: "Alan Pacheco",
+  email: "alan@gmail.com",
+  image:
+    "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+};
 </script>
