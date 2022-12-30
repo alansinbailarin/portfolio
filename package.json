@@ -10,6 +10,7 @@
     "type-check": "vue-tsc --noEmit"
   },
   "dependencies": {
+    "@vueuse/core": "^9.9.0",
     "flowbite": "^1.5.5",
     "pinia": "^2.0.28",
     "vue": "^3.2.45",

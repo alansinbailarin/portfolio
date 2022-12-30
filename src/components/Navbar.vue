@@ -32,7 +32,6 @@
                     class="flex max-w-xs items-center rounded-full"
                     id="user-menu-button"
                     :aria-expanded="open"
-                    aria-haspopup="true"
                     @click="open = !open"
                   >
                     <span class="sr-only">Open user menu</span>
@@ -45,6 +44,7 @@
                 </div>
                 <div
                   v-if="open"
+                  ref="userDropdown"
                   class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
                   role="menu"
                   aria-orientation="vertical"
@@ -54,7 +54,6 @@
                   <RouterLink
                     v-for="item in userMenu"
                     :to="item.link"
-                    href="#"
                     class="block px-4 py-2 text-sm text-gray-700"
                     role="menuitem"
                     tabindex="-1"
@@ -66,7 +65,6 @@
             </div>
           </div>
           <div class="-mr-2 flex md:hidden">
-            <!-- Mobile menu button -->
             <button
               type="button"
               class="inline-flex items-center justify-center rounded-md p-2 text-gray-500"
@@ -74,12 +72,6 @@
               :aria-expanded="open"
               @click="open = !open"
             >
-              <span class="sr-only">Open main menu</span>
-              <!--
-              Heroicon name: outline/bars-3
-
-              Menu open: "hidden", Menu closed: "block"
-            -->
               <svg
                 class="block h-6 w-6"
                 xmlns="http://www.w3.org/2000/svg"
@@ -95,11 +87,6 @@
                   d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
                 />
               </svg>
-              <!--
-              Heroicon name: outline/x-mark
-
-              Menu open: "block", Menu closed: "hidden"
-            -->
               <svg
                 class="hidden h-6 w-6"
                 xmlns="http://www.w3.org/2000/svg"
@@ -119,15 +106,11 @@
           </div>
         </div>
       </div>
-
-      <!-- Mobile menu, show/hide based on menu state. -->
       <div v-if="open" class="md:hidden" id="mobile-menu">
         <div class="space-y-1 px-2 pt-2 pb-3 sm:px-3">
-          <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
           <RouterLink
             v-for="item in menu"
             :to="item.link"
-            href="#"
             class="text-gray-400 block hover:bg-gray-100 hover:text-gray-700 px-3 py-2 rounded-md text-base"
             aria-current="page"
             active-class="bg-indigo-100 text-indigo-600 font-semibold hover:bg-indigo-200 hover:text-indigo-600 transition duration-300 ease-out"
@@ -157,7 +140,6 @@
           <div v-for="item in userMenu" class="mt-3 space-y-1 px-2">
             <RouterLink
               :to="item.link"
-              href="#"
               class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-100 hover:text-gray-600"
               active-class="bg-gray-50 text-gray-600 font-semibold hover:bg-gray-50 hover:text-gray-600 transition duration-300 ease-out"
               >{{ item.name }}</RouterLink
@@ -176,8 +158,12 @@ export default {
 <script setup lang="ts">
 import { ref } from "vue";
 import { RouterLink } from "vue-router";
+import { onClickOutside } from "@vueuse/core";
 
+const userDropdown = ref(null);
 const open = ref(false);
+
+onClickOutside(userDropdown, () => (open.value = false));
 const menu = [
   {
     name: "Inicio",

@@ -7,6 +7,5 @@ import { RouterView } from "vue-router";
   <div id="app">
     <Navbar />
     <RouterView />
-    <!-- <HomePage /> -->
   </div>
 </template>

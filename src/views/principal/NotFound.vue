@@ -7,7 +7,9 @@
         <div class="relative">
           <div class="absolute">
             <div class="">
-              <h1 class="my-2 text-gray-800 font-extrabold text-3xl">
+              <h1
+                class="mb-4 text-5xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-5xl dark:text-white"
+              >
                 Ups, parece que no hay nada que ver por aca
               </h1>
               <p class="my-2 text-gray-800">
