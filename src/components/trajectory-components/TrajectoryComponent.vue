@@ -45,11 +45,13 @@
         <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
           {{ item.description }}
         </p>
-        <div
+        <a
+          :href="item.link"
+          target="_blank"
           class="inline-flex items-center px-6 py-1.5 cursor-pointer rounded-md border border-gray-400 text-gray-600 font-bold hover:bg-gray-100 transition-all duration-200 ease-in-out"
           v-if="item.link != ''"
         >
-          <a :href="item.link" target="_blank">Visitar</a>
+          <p>Visitar</p>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="19"
@@ -65,7 +67,7 @@
               d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z"
             />
           </svg>
-        </div>
+        </a>
       </li>
     </ol>
   </div>

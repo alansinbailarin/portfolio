@@ -16,8 +16,8 @@
                 <RouterLink
                   v-for="item in menu"
                   :to="item.link"
-                  class="text-gray-400 hover:bg-gray-100 hover:text-gray-700 font-semibold px-3 py-2 rounded-md text-sm"
-                  active-class="bg-indigo-100 text-blue-600 font-semibold hover:bg-indigo-200 hover:text-indigo-600 transition duration-300 ease-out"
+                  class="text-gray-400 hover:bg-violet-100 hover:text-violet-500 font-semibold px-3 py-2 rounded-md text-sm"
+                  active-class="bg-violet-100 text-violet-600 font-semibold hover:bg-indigo-200 hover:text-indigo-600 transition duration-300 ease-out"
                   >{{ item.name }}</RouterLink
                 >
               </div>
@@ -110,9 +110,9 @@
           <RouterLink
             v-for="item in menu"
             :to="item.link"
-            class="text-gray-400 block hover:bg-gray-100 hover:text-gray-700 px-3 py-2 rounded-md text-base"
+            class="text-gray-400 font-semibold block hover:bg-violet-100 hover:text-violet-500 px-3 py-2 rounded-md text-base"
             aria-current="page"
-            active-class="bg-indigo-100 text-blue-600 font-semibold hover:bg-indigo-200 hover:text-indigo-600 transition duration-300 ease-out"
+            active-class="bg-violet-100 text-violet-600 font-semibold hover:bg-violet-200 hover:text-violet-600 transition duration-300 ease-out"
             >{{ item.name }}</RouterLink
           >
         </div>
