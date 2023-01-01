@@ -6,6 +6,7 @@ import router from "./router";
 
 import "./index.css";
 import "flowbite";
+import "/src/assets/main.css";
 
 const app = createApp(App);
 
