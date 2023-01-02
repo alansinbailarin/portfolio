@@ -1,5 +1,7 @@
 <template>
-  <div class="relative px-6 lg:px-8 p-10 mt-14 bg-slate-900 rounded-md">
+  <div
+    class="relative px-6 lg:px-8 p-10 mt-14 bg-slate-900 dark:bg-gray-900 rounded-md"
+  >
     <div class="mx-auto">
       <div class="mb-8">
         <p class="text-center uppercase text-white font-semibold text-xl">

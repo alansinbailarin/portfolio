@@ -2,7 +2,9 @@
   <div class="relative px-6 lg:px-8 pt-16">
     <div class="mx-auto">
       <div class="md:hidden">
-        <p class="text-center text-xl uppercase text-gray-800 font-semibold">
+        <p
+          class="text-center text-xl uppercase text-gray-800 dark:text-gray-100 font-semibold"
+        >
           Dejame contarte un poco
         </p>
         <p
@@ -24,7 +26,9 @@
         </div>
         <div>
           <div class="hidden md:block">
-            <p class="uppercase text-gray-800 font-semibold text-xl">
+            <p
+              class="uppercase text-gray-800 dark:text-gray-100 font-semibold text-xl"
+            >
               Dejame contarte un poco
             </p>
             <p
@@ -34,7 +38,7 @@
             </p>
           </div>
           <p
-            class="text-base font-normal text-gray-600 text-justify mb-6 md:mb-3"
+            class="text-base font-normal text-gray-600 dark:text-gray-400 text-justify mb-6 md:mb-3"
           >
             Como te lo mencioné arriba, mi nombre es Alan, tengo 24 años de
             edad, actualmente curso la carrera de ingenieria de software, aún
@@ -47,22 +51,19 @@
             intenta superar los obstaculos que se le pongan enfrente.
           </p>
           <div
-            class="inline-flex items-center border border-gray-300 text-gray-700 px-6 py-2 rounded-md"
+            class="inline-flex items-center text-sm px-6 py-1.5 cursor-pointer rounded-md border border-gray-400 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-800 text-gray-600 font-bold hover:bg-gray-100 transition-all duration-200 ease-in-out"
           >
-            <RouterLink to="/blog" class="text-base font-normal"
-              >Checa mi blog</RouterLink
-            >
+            <RouterLink to="/blog" class="">Checa mi blog</RouterLink>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="22"
-              height="22"
+              width="19"
+              height="19"
               fill="currentColor"
-              class="bi bi-list-check ml-1"
+              class="bi bi-code ml-2"
               viewBox="0 0 16 16"
             >
               <path
-                fill-rule="evenodd"
-                d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3.854 2.146a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708L2 3.293l1.146-1.147a.5.5 0 0 1 .708 0zm0 4a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708L2 7.293l1.146-1.147a.5.5 0 0 1 .708 0zm0 4a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0z"
+                d="M5.854 4.854a.5.5 0 1 0-.708-.708l-3.5 3.5a.5.5 0 0 0 0 .708l3.5 3.5a.5.5 0 0 0 .708-.708L2.707 8l3.147-3.146zm4.292 0a.5.5 0 0 1 .708-.708l3.5 3.5a.5.5 0 0 1 0 .708l-3.5 3.5a.5.5 0 0 1-.708-.708L13.293 8l-3.147-3.146z"
               />
             </svg>
           </div>

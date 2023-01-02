@@ -1,6 +1,6 @@
 <template>
-  <div class="min-h-full">
-    <nav class="bg-white shadow-sm">
+  <div class="">
+    <nav class="bg-white shadow-sm dark:bg-gray-800">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="flex h-16 items-center justify-between">
           <div class="flex items-center">
@@ -16,8 +16,8 @@
                 <RouterLink
                   v-for="item in menu"
                   :to="item.link"
-                  class="text-gray-400 hover:bg-violet-100 hover:text-violet-500 font-semibold px-3 py-2 rounded-md text-sm"
-                  active-class="bg-violet-100 text-violet-600 font-semibold hover:bg-indigo-200 hover:text-indigo-600 transition duration-300 ease-out"
+                  class="text-gray-400 hover:bg-violet-100 dark:hover:bg-gray-700 hover:text-violet-500 dark:hover:text-white font-semibold px-3 py-2 rounded-md text-sm transition duration-300 ease-out"
+                  active-class="bg-violet-100 dark:bg-gray-700 text-violet-600 dark:text-white font-semibold hover:bg-indigo-200 hover:text-indigo-600 "
                   >{{ item.name }}</RouterLink
                 >
               </div>
@@ -44,7 +44,7 @@
                 </div>
                 <div
                   v-if="open"
-                  class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+                  class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white dark:bg-gray-700 py-1 shadow-lg"
                   role="menu"
                   aria-orientation="vertical"
                   aria-labelledby="user-menu-button"
@@ -53,7 +53,7 @@
                   <RouterLink
                     v-for="item in userMenu"
                     :to="item.link"
-                    class="block px-4 py-2 text-sm text-gray-700"
+                    class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300"
                     role="menuitem"
                     tabindex="-1"
                     id="user-menu-item-0"
@@ -66,7 +66,7 @@
           <div class="-mr-2 flex md:hidden">
             <button
               type="button"
-              class="inline-flex items-center justify-center rounded-md p-2 text-gray-500"
+              class="inline-flex items-center justify-center rounded-md p-2 text-gray-500 dark:hover:bg-gray-700 transition-all duration-300 ease-in-out hover:bg-gray-100"
               aria-controls="mobile-menu"
               :aria-expanded="open"
               @click="open = !open"
@@ -110,13 +110,13 @@
           <RouterLink
             v-for="item in menu"
             :to="item.link"
-            class="text-gray-400 font-semibold block hover:bg-violet-100 hover:text-violet-500 px-3 py-2 rounded-md text-base"
+            class="text-gray-400 block font-semibold hover:bg-violet-100 dark:hover:bg-gray-700 dark:hover:text-white hover:text-violet-500 px-3 py-2 rounded-md text-base transition duration-300 ease-out"
             aria-current="page"
-            active-class="bg-violet-100 text-violet-600 font-semibold hover:bg-violet-200 hover:text-violet-600 transition duration-300 ease-out"
+            active-class="bg-violet-100 dark:bg-gray-700 text-violet-600 dark:text-white hover:bg-violet-200 hover:text-violet-600"
             >{{ item.name }}</RouterLink
           >
         </div>
-        <div class="border-t border-gray-100 pt-4 pb-3">
+        <div class="border-t border-gray-100 dark:border-gray-700 pt-4 pb-3">
           <div class="flex items-center px-5" v-bind="user">
             <div class="flex-shrink-0">
               <img
@@ -127,7 +127,7 @@
             </div>
             <div class="ml-3">
               <div
-                class="text-base leading-none text-gray-600 font-semibold mb-1"
+                class="text-base leading-none text-gray-600 dark:text-gray-100 font-semibold mb-1"
               >
                 {{ user.name }}
               </div>
@@ -139,8 +139,8 @@
           <div v-for="item in userMenu" class="mt-3 space-y-1 px-2">
             <RouterLink
               :to="item.link"
-              class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-100 hover:text-gray-600"
-              active-class="bg-gray-50 text-gray-600 font-semibold hover:bg-gray-50 hover:text-gray-600 transition duration-300 ease-out"
+              class="block rounded-md px-3 py-2 text-base font-semibold text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white hover:text-gray-600"
+              active-class="bg-gray-50 text-gray-600 dark:text-white dark:bg-gray-700 font-semibold hover:bg-gray-50 hover:text-gray-600 transition duration-300 ease-out"
               >{{ item.name }}</RouterLink
             >
           </div>

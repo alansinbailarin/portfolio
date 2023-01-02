@@ -1,11 +1,11 @@
 <template>
-  <main>
+  <main class="">
     <div class="relative px-6 lg:px-8 pt-12">
       <div class="mx-auto max-w-3xl md:max-w-5xl">
         <div>
           <div>
             <h1
-              class="md:text-8xl text-4xl font-bold text-black tracking-tight text-center"
+              class="md:text-8xl text-4xl font-bold text-black dark:text-white tracking-tight text-center"
             >
               Hola, mi nombre es
               <span
@@ -14,7 +14,9 @@
                 &lt;Alan /&gt;
               </span>
             </h1>
-            <p class="mt-4 text-2xl leading-8 text-gray-600 text-center">
+            <p
+              class="mt-4 text-2xl leading-8 text-gray-600 dark:text-gray-300 text-center"
+            >
               Ingeniero de software en proceso, apasionado por la tecnología y
               el desarrollo, de Tijuana para el mundo, actualmente me encuentro
               trabajando como desarrollador frontend en
@@ -29,7 +31,7 @@
             <div class="mt-8 flex gap-x-4 justify-center">
               <!-- Modal toggle -->
               <button
-                class="inline-flex items-center text-white bg-gray-900 hover:bg-gray-800 font-medium rounded-lg text-base px-12 md:px-8 py-3 text-center transition duration-200 ease-in-out"
+                class="inline-flex items-center text-white dark:text-black dark:bg-gray-100 dark:hover:bg-gray-200 shadow-lg bg-gray-900 hover:bg-gray-800 font-semibold rounded-lg text-base px-12 md:px-8 py-3 text-center transition duration-200 ease-in-out"
                 type="button"
                 data-modal-toggle="authentication-modal"
               >

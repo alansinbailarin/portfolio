@@ -6,10 +6,9 @@ import FooterComponent from "../src/components/Footer.vue";
 </script>
 
 <template>
-  <div id="app">
+  <div id="app" class="dark:bg-gray-900">
     <BannerComponent />
     <Navbar />
     <RouterView />
-    <FooterComponent />
   </div>
 </template>

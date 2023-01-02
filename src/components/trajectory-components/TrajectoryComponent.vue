@@ -2,7 +2,9 @@
   <div>
     <TopLeftShadow />
     <div class="mb-4 text-center md:text-left">
-      <p class="uppercase text-gray-800 font-semibold text-xl">
+      <p
+        class="uppercase text-gray-800 dark:text-gray-100 font-semibold text-xl"
+      >
         Mi trayectoria
       </p>
       <p
@@ -12,7 +14,7 @@
       </p>
     </div>
 
-    <ol class="relative border-l border-gray-200 dark:border-gray-700">
+    <ol class="relative border-l border-gray-200 dark:border-gray-800">
       <li class="mb-10 ml-4" v-for="item in trajectory">
         <div
           class="absolute w-3 h-3 z-10 rounded-full mt-1.5 -left-1.5"
@@ -25,21 +27,21 @@
           >
           <span
             v-if="item.isPublic === true"
-            class="bg-green-100 text-green-500 font-semibold text-xs px-4 py-1 rounded-md"
+            class="bg-green-100 dark:bg-green-200 text-green-500 font-semibold text-xs px-4 py-1 rounded-md"
             >Publico</span
           >
           <span
             v-else-if="item.isPublic === false"
-            class="bg-red-100 text-red-500 font-semibold text-xs px-4 py-1 rounded-md"
+            class="bg-red-100 dark:bg-red-200 text-red-500 font-semibold text-xs px-4 py-1 rounded-md"
             >Privado</span
           >
           <span
             v-else
-            class="bg-blue-100 text-blue-500 font-semibold text-xs px-4 py-1 rounded-md"
+            class="bg-blue-100 text-blue-500 dark:bg-blue-200 font-semibold text-xs px-4 py-1 rounded-md"
             >Personal</span
           >
         </div>
-        <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+        <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">
           {{ item.title }}
         </h3>
         <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
@@ -48,7 +50,7 @@
         <a
           :href="item.link"
           target="_blank"
-          class="inline-flex items-center px-6 py-1.5 cursor-pointer rounded-md border border-gray-400 text-gray-600 font-bold hover:bg-gray-100 transition-all duration-200 ease-in-out"
+          class="inline-flex items-center px-6 py-1.5 cursor-pointer rounded-md border border-gray-400 text-gray-600 font-bold hover:bg-gray-100 transition-all duration-200 ease-in-out dark:hover:bg-gray-800 dark:border-gray-700 dark:text-gray-400"
           v-if="item.link != ''"
         >
           <p>Visitar</p>
