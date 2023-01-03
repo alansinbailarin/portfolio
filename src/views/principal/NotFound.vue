@@ -1,50 +1,53 @@
 <template>
-  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-    <div
-      class="lg:px-24 lg:py-24 md:py-20 md:px-44 px-4 py-24 items-center flex justify-center flex-col-reverse lg:flex-row md:gap-28 gap-16"
-    >
-      <div class="xl:pt-24 w-full xl:w-1/2 relative pb-12 lg:pb-0">
-        <div class="relative">
-          <div class="absolute">
-            <div class="">
-              <h1
-                class="mb-4 text-5xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-5xl dark:text-white"
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
+    <div class="dark:bg-gray-900">
+      <div class="md:grid grid-cols-2">
+        <div class="md:hidden mb-6">
+          <img
+            src="https://i.ibb.co/ck1SGFJ/Group.png"
+            class="object-center mx-auto"
+          />
+        </div>
+        <div>
+          <h1
+            class="md:text-7xl text-4xl font-bold text-black dark:text-white tracking-tight text-center md:text-left"
+          >
+            Ups, parece que no hay nada que ver aqui
+          </h1>
+          <p
+            class="mt-4 text-2xl leading-8 text-gray-600 dark:text-gray-300 text-center md:text-left"
+          >
+            Pero no te preocupes, puedes regresar a la pantalla de inicio
+            haciendo click en el botón de abajo.
+          </p>
+          <div class="mt-8 flex gap-x-4 justify-center md:justify-start">
+            <!-- Modal toggle -->
+            <RouterLink
+              to="/"
+              class="inline-flex items-center text-white dark:text-black dark:bg-gray-100 dark:hover:bg-gray-200 shadow-lg bg-gray-900 hover:bg-gray-800 font-semibold rounded-lg text-base px-12 md:px-8 py-3 text-center transition duration-200 ease-in-out"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="26"
+                height="26"
+                fill="currentColor"
+                class="bi bi-arrow-left-short mr-2"
+                viewBox="0 0 16 16"
               >
-                Ups, parece que no hay nada que ver por aca
-              </h1>
-              <p class="my-2 text-gray-800">
-                No te preocupes, puedes volver a la pagina principal si no
-                encontraste lo que estabas buscando!
-              </p>
-              <RouterLink
-                to="/"
-                class="sm:w-full lg:w-auto my-2 bg-indigo-600 text-white font-normal py-3 px-6 rounded inline-flex items-center hover:bg-indigo-700 transition duration-200 ease-in-out"
-              >
-                <svg
-                  class="w-5 h-5 mr-2"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M10 19l-7-7m0 0l7-7m-7 7h18"
-                  ></path>
-                </svg>
-                Regresar al inicio
-              </RouterLink>
-            </div>
-          </div>
-          <div>
-            <img src="https://i.ibb.co/G9DC8S0/404-2.png" />
+                <path
+                  fill-rule="evenodd"
+                  d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"
+                />
+              </svg>
+              Regresar al inicio
+            </RouterLink>
           </div>
         </div>
-      </div>
-      <div>
-        <img src="https://i.ibb.co/ck1SGFJ/Group.png" />
+        <div class="hidden md:block">
+          <img
+            src="https://i.ibb.co/ck1SGFJ/Group.png"
+            class="object-center mx-auto"
+          />
+        </div>
       </div>
     </div>
   </div>

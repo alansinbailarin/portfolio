@@ -1,0 +1,19 @@
+:root {
+  --vt-c-white: #ffffff;
+  --vt-c-black: rgb(17 24 39);
+}
+
+:root {
+  --color-background: var(--vt-c-white);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: var(--vt-c-black);
+  }
+}
+
+body {
+  min-height: 100vh;
+  background: var(--color-background);
+}
