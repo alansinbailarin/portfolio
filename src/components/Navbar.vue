@@ -26,7 +26,12 @@
           <div class="hidden md:block">
             <div class="ml-4 flex items-center md:ml-6">
               <div class="mr-3">
-                <a href="../assets/resume.pdf" download>Descarga mi CV</a>
+                <a
+                  class="inline-flex items-center text-sm px-6 py-2 cursor-pointer rounded-md font-bold text-white bg-indigo-600 hover:bg-indigo-700 transition-all duration-200 ease-in-out"
+                  href="../assets/resume.pdf"
+                  download="resume"
+                  >Descarga mi CV</a
+                >
               </div>
               <div class="relative ml-3" v-if="userLogged">
                 <div class="wrapper">
@@ -67,6 +72,14 @@
             </div>
           </div>
           <div class="-mr-2 flex md:hidden">
+            <div class="mr-3">
+              <a
+                class="inline-flex items-center text-sm px-6 py-2 cursor-pointer rounded-md font-bold text-white bg-indigo-600 hover:bg-indigo-700 transition-all duration-200 ease-in-out"
+                href="../assets/resume.pdf"
+                download="resume"
+                >Descarga mi CV</a
+              >
+            </div>
             <button
               type="button"
               class="inline-flex items-center justify-center rounded-md p-2 text-gray-500 dark:hover:bg-gray-700 transition-all duration-300 ease-in-out hover:bg-gray-100"
@@ -120,7 +133,7 @@
           >
         </div>
         <div class="border-t border-gray-100 dark:border-gray-700 pt-4 pb-3">
-          <div class="flex items-center px-5" v-bind="user">
+          <div class="flex items-center px-5" v-bind="user" v-if="userLogged">
             <div class="flex-shrink-0">
               <img
                 class="h-10 w-10 rounded-full"
