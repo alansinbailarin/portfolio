@@ -25,7 +25,10 @@
           </div>
           <div class="hidden md:block">
             <div class="ml-4 flex items-center md:ml-6">
-              <div class="relative ml-3">
+              <div class="mr-3">
+                <a href="../assets/resume.pdf" download>Descarga mi CV</a>
+              </div>
+              <div class="relative ml-3" v-if="userLogged">
                 <div class="wrapper">
                   <button
                     type="button"
@@ -159,6 +162,7 @@ import { ref } from "vue";
 import { RouterLink } from "vue-router";
 
 const open = ref(false);
+const userLogged = ref(false);
 
 const menu = [
   {
