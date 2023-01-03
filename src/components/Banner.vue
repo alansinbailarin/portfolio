@@ -1,8 +1,5 @@
 <template>
-  <div
-    v-if="bannerVisibility"
-    class="bg-indigo-600 transition-all duration-300 ease-in-out"
-  >
+  <div v-if="bannerVisibility" class="bg-indigo-600">
     <div class="mx-auto max-w-7xl py-1.5 px-1.5 sm:px-6 lg:px-8">
       <div class="flex flex-wrap items-center justify-between">
         <div class="flex w-0 flex-1 items-center">

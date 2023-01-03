@@ -23,7 +23,7 @@
               <a
                 href="https://www.jelp.delivery"
                 target="_blank"
-                class="text-indigo-600 font-medium underline"
+                class="text-blue-500 font-medium underline"
                 >Jelp delivery</a
               >, amante de los videojuegos, el capuccino, el codigo limpio y el
               diseño ux.
