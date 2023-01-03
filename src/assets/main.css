@@ -5,16 +5,15 @@
 
 /* width */
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 3px;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: rgb(226, 226, 226);
-  z-index: -1;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #bdbbbb;
+  background: transparent;
 }

@@ -13,13 +13,17 @@
           <ul class="text-gray-600 dark:text-gray-400">
             <li class="mb-4">
               <a
-                href="https://github.com/themesberg/flowbite"
+                href="https://github.com/alansinbailarin"
                 class="hover:underline"
+                target="_blank"
                 >Github</a
               >
             </li>
             <li>
-              <a href="https://discord.gg/4eeurUVvTy" class="hover:underline"
+              <a
+                href="https://dribbble.com/alansinbailarin"
+                class="hover:underline"
+                target="_blank"
                 >Dribbble</a
               >
             </li>
