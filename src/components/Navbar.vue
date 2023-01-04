@@ -66,42 +66,6 @@
                   >Descarga mi CV</a
                 >
               </div>
-              <div class="relative ml-3" v-if="userLogged">
-                <div class="wrapper">
-                  <button
-                    type="button"
-                    class="flex max-w-xs items-center rounded-full"
-                    id="user-menu-button"
-                    :aria-expanded="open"
-                    @click="open = !open"
-                  >
-                    <span class="sr-only">Open user menu</span>
-                    <img
-                      class="h-8 w-8 rounded-full"
-                      src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                      alt=""
-                    />
-                  </button>
-                </div>
-                <div
-                  v-if="open"
-                  class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white dark:bg-gray-700 py-1 shadow-lg"
-                  role="menu"
-                  aria-orientation="vertical"
-                  aria-labelledby="user-menu-button"
-                  tabindex="-1"
-                >
-                  <RouterLink
-                    v-for="item in userMenu"
-                    :to="item.link"
-                    class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300"
-                    role="menuitem"
-                    tabindex="-1"
-                    id="user-menu-item-0"
-                    >{{ item.name }}</RouterLink
-                  >
-                </div>
-              </div>
             </div>
           </div>
           <div class="inline-flex gap-4 items-center md:hidden">
@@ -202,35 +166,6 @@
             >{{ item.name }}</RouterLink
           >
         </div>
-        <div class="border-t border-gray-100 dark:border-gray-700 pt-4 pb-3">
-          <div class="flex items-center px-5" v-bind="user" v-if="userLogged">
-            <div class="flex-shrink-0">
-              <img
-                class="h-10 w-10 rounded-full"
-                :src="user.image"
-                :alt="user.name"
-              />
-            </div>
-            <div class="ml-3">
-              <div
-                class="text-base leading-none text-gray-600 dark:text-gray-100 font-semibold mb-1"
-              >
-                {{ user.name }}
-              </div>
-              <div class="text-sm font-medium leading-none text-gray-400">
-                {{ user.email }}
-              </div>
-            </div>
-          </div>
-          <div v-for="item in userMenu" class="mt-3 space-y-1 px-2">
-            <RouterLink
-              :to="item.link"
-              class="block rounded-md px-3 py-2 text-base font-semibold text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white hover:text-gray-600"
-              active-class="bg-gray-50 text-gray-600 dark:text-white dark:bg-gray-700 font-semibold hover:bg-gray-50 hover:text-gray-600 transition duration-300 ease-out"
-              >{{ item.name }}</RouterLink
-            >
-          </div>
-        </div>
       </div>
     </nav>
   </div>
@@ -280,25 +215,4 @@ const menu = [
     link: "/blog",
   },
 ];
-const userMenu = [
-  {
-    name: "Mi perfil",
-    link: "/profile",
-  },
-  {
-    name: "Configuración",
-    link: "/settings",
-  },
-  {
-    name: "Cerrar sesión",
-    link: "/",
-  },
-];
-
-const user = {
-  name: "Alan Pacheco",
-  email: "alan@gmail.com",
-  image:
-    "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-};
 </script>

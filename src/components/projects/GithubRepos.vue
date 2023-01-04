@@ -14,7 +14,7 @@
               >{{ item.name }}</a
             >
             <span
-              class="text-green-600 dark:bg-green-200 bg-green-100 text-xs p-1 font-semibold rounded-md"
+              class="text-green-600 dark:bg-green-200 bg-green-100 text-xs py-1 px-2 font-semibold rounded-md"
               v-if="item.private === false"
               >Publico</span
             >
@@ -58,7 +58,9 @@ onMounted(async () => {
   } catch (error) {
     console.log(error);
   } finally {
-    loading.value = false;
+    setTimeout(() => {
+      loading.value = false;
+    }, 600);
   }
 });
 </script>
