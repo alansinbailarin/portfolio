@@ -42,7 +42,7 @@ export default {
 import { ref } from "vue";
 import type { githubRepos } from "@/types/githubRepos";
 
-const dataRepos = ref<githubRepos>({} as githubRepos);
+const dataRepos = ref<any>({} as any);
 
 fetch("https://api.github.com/users/alansinbailarin/repos")
   .then((res) => res.json())
