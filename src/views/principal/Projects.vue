@@ -1,7 +1,7 @@
 <template>
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-10">
     <div class="md:grid grid-cols-3 gap-4">
-      <GithubProfile class="mb-4 md:mb-0 md:h-64" />
+      <GithubProfile class="mb-4 md:mb-0 md:h-60" />
       <GithubRepos class="col-span-2" />
     </div>
   </div>
