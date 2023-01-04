@@ -179,7 +179,6 @@
         />
         <p class="uppercase dark:text-white mt-2 font-semibold">Postman</p>
       </div>
-      <LowRightShadow />
     </div>
   </div>
 </template>
@@ -188,7 +187,4 @@ export default {
   name: "mystack-component",
 };
 </script>
-<script setup lang="ts">
-import LowRightShadow from "@/components/shadows/LowRight.vue";
-import TopLeftShadow from "@/components/shadows/TopLeft.vue";
-</script>
+<script setup lang="ts"></script>

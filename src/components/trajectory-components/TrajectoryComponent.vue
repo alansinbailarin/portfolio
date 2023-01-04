@@ -1,6 +1,5 @@
 <template>
   <div>
-    <TopLeftShadow />
     <div class="mb-4 text-center md:text-left">
       <p
         class="uppercase text-gray-800 dark:text-gray-100 font-semibold text-xl"
@@ -80,7 +79,6 @@ export default {
 };
 </script>
 <script setup lang="ts">
-import TopLeftShadow from "../shadows/TopLeft.vue";
 const trajectory = [
   {
     date: "Junio 2018",
