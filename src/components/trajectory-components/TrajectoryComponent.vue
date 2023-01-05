@@ -139,9 +139,9 @@ const trajectory = [
     title: "MixFee",
     description:
       "MixFee es una plataforma para que los recien egresados o personas que quieren obtener su primer trabajo, tambien para las personas mayores, que se les dificulta obtener trabajo, este proyecto lo desarrolle con varios amigos y a decir verdad ha sido el proyecto mas retador que he tenido, habiendo invertido mas de 160 horas personales en el desarrollo, este proyecto me entusiasma mucho y espero en algun momento sacarlo al publico.",
-    link: "",
+    link: "https://github.com/alansinbailarin/MixFeeV1",
     color: "bg-teal-600",
-    isPublic: null,
+    isPublic: true,
   },
   {
     date: "Julio - Noviembre 2022",

@@ -1,6 +1,27 @@
 <template>
+  <button
+    class="inline-flex items-center text-white dark:text-black dark:bg-gray-100 dark:hover:bg-gray-200 shadow-lg bg-gray-900 hover:bg-gray-800 font-semibold rounded-lg text-base px-12 md:px-8 py-3 text-center transition duration-200 ease-in-out"
+    type="button"
+    data-modal-target="sendMessage"
+    data-modal-toggle="modalMessage"
+  >
+    Dejame un mensaje
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="22"
+      height="22"
+      fill="currentColor"
+      class="bi bi-arrow-right-short ml-2"
+      viewBox="0 0 16 16"
+    >
+      <path
+        fill-rule="evenodd"
+        d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"
+      />
+    </svg>
+  </button>
   <div
-    id="authentication-modal"
+    id="modalMessage"
     tabindex="-1"
     aria-hidden="true"
     class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full"
